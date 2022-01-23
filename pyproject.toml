@@ -12,7 +12,10 @@ fastapi = "^0.72.0"
 uvicorn = "^0.17.0"
 TA-Lib = "^0.4.24"
 dash = "^2.0.0"
-shellinford = "^0.4.1"
+stockstats = "^0.4.1"
+yahoo-fin = "^0.8.9"
+dash-bootstrap-components = "<0.11"
+yfinance = "^0.1.69"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.6.0"

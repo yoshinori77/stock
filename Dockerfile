@@ -1,6 +1,5 @@
 FROM python:3.7-buster
 ENV PYTHONUNBUFFERED=1
-ENV export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 RUN apt-get update -y \
     && apt-get install -y libgomp1 \
@@ -15,13 +14,6 @@ RUN wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz \
     && ./configure --prefix=/usr \
     && make \
     && make install
-
-
-# [ローカル環境で実行する場合]
-# サービスアカウントのjsonファイルをコピーしてパスを指定する
-# COPY source_key_path destination_key_path
-# ENV GOOGLE_APPLICATION_CREDENTIALS=''
-# 最後にconfig/w2v.ymlのproject/is_localをtrueに変更する
 
 COPY poetry.lock pyproject.toml ./
 
